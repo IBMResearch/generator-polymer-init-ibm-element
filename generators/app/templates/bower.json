@@ -11,7 +11,7 @@
   "license": "https://ibmresearch.github.io/LICENSE.txt",
   "repository": {
     "type": "git",
-    "url": "git://github.com/IBMResearch/<%= name %>.git"
+    "url": "git://github.com/<%= organization %>/<%= name %>.git"
   },
   "main": "<%= name %>.html",
   "dependencies": {

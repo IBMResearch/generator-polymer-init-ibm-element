@@ -20,5 +20,5 @@ Example:
 <<%= name %>></<%= name %>>
 ```
 
-[travis-image]: https://travis-ci.org/IBMResearch/<%= name %>.svg?branch=master
-[travis-url]: https://travis-ci.org/IBMResearch/<%= name %>
+[travis-image]: https://travis-ci.org/<%= organization %>/<%= name %>.svg?branch=master
+[travis-url]: https://travis-ci.org/<%= organization %>/<%= name %>
