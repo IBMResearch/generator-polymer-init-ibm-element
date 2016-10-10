@@ -11,30 +11,67 @@
 var yeoman = require('yeoman-generator');
 
 module.exports = yeoman.Base.extend({
-  prompting: function() {
-    this.log('Welcome to the flawless generator-polymer-init-ibm-element generator!');
+  initializing: function() {
+    // Yeoman replaces dashes with spaces. We want dashes.
+    this.appname = this.appname.replace(/\s+/g, '-');
+  },
 
-    var prompts = [{
-      type: 'confirm',
-      name: 'someAnswer',
-      message: 'Would you like to enable this option?',
-      default: true
-    }];
+  prompting: function() {
+    var _this = this;
+    var prompts = [
+      {
+        name: 'name',
+        type: 'input',
+        message: 'Element name',
+        default: this.appname + (this.appname.includes('-') ? '' : '-element'),
+        validate(name) {
+          var nameContainsHyphen = name.includes('-');
+          if (!nameContainsHyphen) {
+            _this.log('\nCustom elements must include a hyphen in their name. Please, try again.');
+          }
+          return nameContainsHyphen;
+        }
+      },
+      {
+        name: 'description',
+        type: 'input',
+        message: 'Brief description of the element',
+      }
+    ];
 
     return this.prompt(prompts).then(function(props) {
-      // To access props later use this.props.someAnswer;
       this.props = props;
     }.bind(this));
   },
 
   writing: function() {
     this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
+      this.templatePath('_gitignore'),
+      this.destinationPath('.gitignore')
+    );
+
+    this.fs.copyTpl(
+      this.templatePath() + '/**/!(_)*',
+      this.destinationPath(),
+      this.props
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('_element.html'),
+      this.destinationPath(this.props.name + '.html'),
+      this.props
+    );
+
+    this.fs.copyTpl(
+      this.templatePath('test/_element.html'),
+      this.destinationPath('test/' + this.props.name + '.html'),
+      this.props
     );
   },
 
   install: function() {
-    this.installDependencies();
+    this.installDependencies({
+      npm: false,
+    });
   }
 });
