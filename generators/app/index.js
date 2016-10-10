@@ -36,6 +36,12 @@ module.exports = yeoman.Base.extend({
         name: 'description',
         type: 'input',
         message: 'Brief description of the element',
+      },
+      {
+        name: 'organization',
+        type: 'input',
+        message: 'GitHub organization',
+        default: 'IBMResearch'
       }
     ];
 
