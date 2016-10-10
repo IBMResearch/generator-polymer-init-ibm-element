@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.org/IBMResearch/<%= name %>.svg?branch=master)](https://travis-ci.org/IBMResearch/<%= name %>)
+[![Build status][travis-image]][travis-url]
 
 ## \<<%= name %>\>
 
-`<<%= name %>>` is a <%= description %>.
+<%= description %>.
 
 Example:
 <!---
@@ -19,3 +19,6 @@ Example:
 ```html
 <<%= name %>></<%= name %>>
 ```
+
+[travis-image]: https://travis-ci.org/IBMResearch/<%= name %>.svg?branch=master
+[travis-url]: https://travis-ci.org/IBMResearch/<%= name %>
