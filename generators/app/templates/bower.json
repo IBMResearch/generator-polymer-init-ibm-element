@@ -1,6 +1,6 @@
 {
-  "name": "<%= name %>",
-  "description": "<%= description %>",
+  "name": "<%= elementName %>",
+  "description": "<%= elementDescription %>",
   "authors": [
     "The IBM Research Emergent Solutions authors"
   ],
@@ -11,9 +11,9 @@
   "license": "https://ibmresearch.github.io/LICENSE.txt",
   "repository": {
     "type": "git",
-    "url": "git://github.com/<%= organization %>/<%= name %>.git"
+    "url": "git://github.com/<%= githubOrganization %>/<%= elementName %>.git"
   },
-  "main": "<%= name %>.html",
+  "main": "<%= elementName %>.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.6.0"
   },

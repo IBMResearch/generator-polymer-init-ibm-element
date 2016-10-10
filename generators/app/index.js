@@ -20,25 +20,25 @@ module.exports = yeoman.Base.extend({
     var _this = this;
     var prompts = [
       {
-        name: 'name',
+        name: 'elementName',
         type: 'input',
-        message: 'Element name',
+        message: 'Name of the element',
         default: this.appname + (this.appname.includes('-') ? '' : '-element'),
-        validate(name) {
-          var nameContainsHyphen = name.includes('-');
-          if (!nameContainsHyphen) {
+        validate(elementName) {
+          var elementNameContainsHyphen = elementName.includes('-');
+          if (!elementNameContainsHyphen) {
             _this.log('\nCustom elements must include a hyphen in their name. Please, try again.');
           }
-          return nameContainsHyphen;
+          return elementNameContainsHyphen;
         }
       },
       {
-        name: 'description',
+        name: 'elementDescription',
         type: 'input',
         message: 'Brief description of the element',
       },
       {
-        name: 'organization',
+        name: 'githubOrganization',
         type: 'input',
         message: 'GitHub organization',
         default: 'IBMResearch'
@@ -64,13 +64,13 @@ module.exports = yeoman.Base.extend({
 
     this.fs.copyTpl(
       this.templatePath('_element.html'),
-      this.destinationPath(this.props.name + '.html'),
+      this.destinationPath(this.props.elementName + '.html'),
       this.props
     );
 
     this.fs.copyTpl(
       this.templatePath('test/_element.html'),
-      this.destinationPath('test/' + this.props.name + '.html'),
+      this.destinationPath('test/' + this.props.elementName + '.html'),
       this.props
     );
   },

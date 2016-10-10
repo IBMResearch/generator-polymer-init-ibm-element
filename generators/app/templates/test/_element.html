@@ -12,25 +12,25 @@ The complete set of contributors may be found at https://ibmresearch.github.io/C
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title><%= name %> test</title>
+    <title><%= elementName %> test</title>
 
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
     <script src="../../web-component-tester/browser.js"></script>
 
-    <link rel="import" href="../<%= name %>.html">
+    <link rel="import" href="../<%= elementName %>.html">
   </head>
   <body>
     <test-fixture id="basic">
       <template>
-        <<%= name %>></<%= name %>>
+        <<%= elementName %>></<%= elementName %>>
       </template>
     </test-fixture>
 
     <script>
-      suite('<%= name %>', function() {
+      suite('<%= elementName %>', function() {
         test('instantiating the element works', function() {
           var element = fixture('basic');
-          assert.equal(element.is, '<%= name %>');
+          assert.equal(element.is, '<%= elementName %>');
         });
       });
     </script>
