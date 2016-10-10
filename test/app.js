@@ -17,8 +17,9 @@ describe('generator-polymer-init-ibm-element:app', function() {
   before(function() {
     return helpers.run(path.join(__dirname, '../generators/app'))
       .withPrompts({
-        name: 'ibm-element',
-        description: 'IBM element description'
+        elementName: 'ibm-element',
+        elementDescription: 'IBM element description',
+        githubOrganization: 'IBMResearch'
       })
       .toPromise();
   });

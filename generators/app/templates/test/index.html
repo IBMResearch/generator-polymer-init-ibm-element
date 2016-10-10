@@ -12,17 +12,17 @@ The complete set of contributors may be found at https://ibmresearch.github.io/C
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title><%= name %> tests</title>
+    <title><%= elementName %> tests</title>
 
     <script src="../../web-component-tester/browser.js"></script>
 
-    <link rel="import" href="../<%= name %>.html">
+    <link rel="import" href="../<%= elementName %>.html">
   </head>
   <body>
     <script>
       WCT.loadSuites([
-        '<%= name %>.html',
-        '<%= name %>.html?dom=shadow'
+        '<%= elementName %>.html',
+        '<%= elementName %>.html?dom=shadow'
       ]);
     </script>
   </body>
