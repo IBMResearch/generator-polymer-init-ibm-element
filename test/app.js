@@ -9,19 +9,31 @@
 'use strict';
 
 var path = require('path');
+
 var assert = require('yeoman-assert');
 var helpers = require('yeoman-test');
 
 describe('generator-polymer-init-ibm-element:app', function() {
   before(function() {
     return helpers.run(path.join(__dirname, '../generators/app'))
-      .withPrompts({someAnswer: true})
+      .withPrompts({
+        name: 'ibm-element',
+        description: 'IBM element description'
+      })
       .toPromise();
   });
 
   it('creates files', function() {
     assert.file([
-      'dummyfile.txt'
+      'demo/index.html',
+      'test/ibm-element.html',
+      'test/index.html',
+      '.gitignore',
+      'ibm-element.html',
+      'bower.json',
+      'index.html',
+      'LICENSE',
+      'README.md'
     ]);
   });
 });
