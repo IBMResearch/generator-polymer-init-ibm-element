@@ -6,15 +6,16 @@
 
 ## Installation
 
-First, install [Polymer CLI](https://www.npmjs.com/package/polymer-cli) using [npm](https://www.npmjs.com) (we assume you have pre-installed [node.js](https://nodejs.org)).
+First, install [Polymer CLI](https://github.com/Polymer/polymer-cli) using [npm](https://www.npmjs.com)
+(we assume you have pre-installed [node.js](https://nodejs.org)).
 
-```bash
+```
 npm install -g polymer-cli
 ```
 
 Then, install generator-polymer-init-ibm-element.
 
-```bash
+```
 npm install -g generator-polymer-init-ibm-element
 ```
 
@@ -22,7 +23,7 @@ npm install -g generator-polymer-init-ibm-element
 
 Use the following command:
 
-```bash
+```
 polymer init ibm-element
 ```
 

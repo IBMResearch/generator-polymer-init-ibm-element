@@ -1,4 +1,4 @@
-/*
+/**
  * @license
  * Copyright (c) 2016 The IBM Research Emergent Solutions authors. All rights reserved.
  * This code may only be used under the MIT style license found at https://ibmresearch.github.io/LICENSE.txt
