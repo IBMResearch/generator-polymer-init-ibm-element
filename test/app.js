@@ -30,8 +30,9 @@ describe('generator-polymer-init-ibm-element:app', function() {
       'test/ibm-element.html',
       'test/index.html',
       '.gitignore',
-      'ibm-element.html',
+      '.eslintrc.json',
       'bower.json',
+      'ibm-element.html',
       'index.html',
       'LICENSE',
       'README.md'
