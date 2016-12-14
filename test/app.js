@@ -27,6 +27,7 @@ describe('generator-polymer-init-ibm-element:app', function() {
   it('creates files', function() {
     assert.file([
       'demo/index.html',
+      'test/.eslintrc.json',
       'test/ibm-element.html',
       'test/index.html',
       '.gitignore',

@@ -61,6 +61,11 @@ module.exports = yeoman.Base.extend({
       this.destinationPath('.eslintrc.json')
     );
 
+    this.fs.copy(
+      this.templatePath('test/.eslintrc.json'),
+      this.destinationPath('test/.eslintrc.json')
+    );
+
     this.fs.copyTpl(
       this.templatePath() + '/**/!(_)*',
       this.destinationPath(),
