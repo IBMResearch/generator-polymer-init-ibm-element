@@ -82,7 +82,7 @@ module.exports = yeoman.Base.extend({
 
   install: function() {
     this.installDependencies({
-      npm: false,
+      npm: false
     });
   }
 });
