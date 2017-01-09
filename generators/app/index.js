@@ -8,7 +8,7 @@
 
 'use strict';
 
-var yeoman = require('yeoman-generator');
+const yeoman = require('yeoman-generator');
 
 module.exports = yeoman.Base.extend({
   initializing: function() {
@@ -17,15 +17,15 @@ module.exports = yeoman.Base.extend({
   },
 
   prompting: function() {
-    var _this = this;
-    var prompts = [
+    let _this = this;
+    let prompts = [
       {
         name: 'elementName',
         type: 'input',
         message: 'Name of the element',
         default: this.appname + (this.appname.includes('-') ? '' : '-element'),
         validate(elementName) {
-          var elementNameContainsHyphen = elementName.includes('-');
+          let elementNameContainsHyphen = elementName.includes('-');
           if (!elementNameContainsHyphen) {
             _this.log('\nCustom elements must include a hyphen in their name. Please, try again.');
           }
