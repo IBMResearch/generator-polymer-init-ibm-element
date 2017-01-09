@@ -8,13 +8,13 @@
 
 'use strict';
 
-var path = require('path');
+const path = require('path');
 
-var assert = require('yeoman-assert');
-var helpers = require('yeoman-test');
+const assert = require('yeoman-assert');
+const helpers = require('yeoman-test');
 
-describe('generator-polymer-init-ibm-element:app', function() {
-  before(function() {
+describe('generator-polymer-init-ibm-element:app', () => {
+  before(() => {
     return helpers.run(path.join(__dirname, '../generators/app'))
       .withPrompts({
         elementName: 'ibm-element',
@@ -24,7 +24,7 @@ describe('generator-polymer-init-ibm-element:app', function() {
       .toPromise();
   });
 
-  it('creates files', function() {
+  it('creates files', () => {
     assert.file([
       'demo/index.html',
       'test/.eslintrc.json',
