@@ -17,7 +17,7 @@ module.exports = yeoman.Base.extend({
   },
 
   prompting: function() {
-    let _this = this;
+    let that = this;
     let prompts = [
       {
         name: 'elementName',
@@ -27,7 +27,7 @@ module.exports = yeoman.Base.extend({
         validate(elementName) {
           let elementNameContainsHyphen = elementName.includes('-');
           if (!elementNameContainsHyphen) {
-            _this.log('\nCustom elements must include a hyphen in their name. Please, try again.');
+            that.log('\nCustom elements must include a hyphen in their name. Please, try again.');
           }
           return elementNameContainsHyphen;
         }
