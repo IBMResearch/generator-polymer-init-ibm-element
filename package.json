@@ -2,7 +2,7 @@
   "name": "generator-polymer-init-ibm-element",
   "version": "0.1.7",
   "description": "Scaffold out an IBM element",
-  "author": "The IBM Research Emergent Solutions authors",
+  "author": "The IBM Research authors",
   "keywords": [
     "yeoman-generator",
     "scaffold",

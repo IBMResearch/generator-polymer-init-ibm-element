@@ -2,7 +2,7 @@
   "name": "<%= elementName %>",
   "description": "<%= elementDescription %>",
   "authors": [
-    "The IBM Research Emergent Solutions authors"
+    "The IBM Research authors"
   ],
   "keywords": [
     "web-component",
