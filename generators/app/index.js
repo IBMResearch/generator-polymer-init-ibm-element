@@ -29,6 +29,7 @@ module.exports = yeoman.Base.extend({
           if (!elementNameContainsHyphen) {
             that.log('\nCustom elements must include a hyphen in their name. Please, try again.');
           }
+
           return elementNameContainsHyphen;
         }
       },
