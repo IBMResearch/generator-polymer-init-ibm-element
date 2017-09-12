@@ -32,6 +32,7 @@ describe('generator-polymer-init-ibm-element:app', () => {
       'test/index.html',
       '.gitignore',
       '.eslintrc.json',
+      '.travis.yml',
       'bower.json',
       'ibm-element.html',
       'index.html',

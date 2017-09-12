@@ -1,4 +1,5 @@
 [![Build status][travis-image]][travis-url]
+[![Build Status](https://travis-ci.org/<%= githubOrganization %>/<%= elementName %>.svg?branch=master)](https://travis-ci.org/<%= githubOrganization %>/<%= elementName %>)
 
 ## \<<%= elementName %>\>
 
@@ -19,6 +20,3 @@ Example:
 ```html
 <<%= elementName %>></<%= elementName %>>
 ```
-
-[travis-image]: https://travis-ci.org/<%= githubOrganization %>/<%= elementName %>.svg?branch=master
-[travis-url]: https://travis-ci.org/<%= githubOrganization %>/<%= elementName %>
