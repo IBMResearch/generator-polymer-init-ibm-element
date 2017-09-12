@@ -28,8 +28,8 @@ The complete set of contributors may be found at https://ibmresearch.github.io/C
 
     <script>
       suite('<%= elementName %>', function() {
-        test('instantiating the element works', function() {
-          var element = fixture('basic');
+        test('instantiating the element works', () => {
+          const element = fixture('basic');
           assert.equal(element.is, '<%= elementName %>');
         });
       });
