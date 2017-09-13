@@ -6,7 +6,7 @@ The complete set of authors may be found at https://ibmresearch.github.io/AUTHOR
 The complete set of contributors may be found at https://ibmresearch.github.io/CONTRIBUTORS.txt
 -->
 
-<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../polymer/polymer-element.html">
 
 <!--
 <%= elementDescription %>.
@@ -25,8 +25,12 @@ The complete set of contributors may be found at https://ibmresearch.github.io/C
     <slot></slot>
   </template>
   <script>
-    Polymer({
-      is: '<%= elementName %>'
-    });
+    class <%= elementClassName %> extends Polymer.Element {
+      static get is() {
+        return '<%= elementName %>';
+      }
+    }
+
+    customElements.define(<%= elementClassName %>.is, <%= elementClassName %>);
   </script>
 </dom-module>

@@ -10,6 +10,23 @@
 
 const yeoman = require('yeoman-generator');
 
+function generateDefaultElementName(appname) {
+  if (appname.includes('-')) {
+    return appname;
+  } else {
+    return `${appname}-element`;
+  }
+}
+
+function generateDefaultElementClassName(defaultElementName) {
+  const words = defaultElementName.split('-');
+  const upperCaseWords = words.map((word) => {
+    return `${word.charAt(0).toUpperCase()}${word.slice(1)}`;
+  });
+
+  return upperCaseWords.join('');
+}
+
 module.exports = yeoman.Base.extend({
   initializing: function() {
     // Yeoman replaces dashes with spaces. We want dashes.
@@ -17,21 +34,28 @@ module.exports = yeoman.Base.extend({
   },
 
   prompting: function() {
-    let that = this;
-    let prompts = [
+    const that = this;
+    const defaultElementName = generateDefaultElementName(this.appname);
+    const prompts = [
       {
         name: 'elementName',
         type: 'input',
         message: 'Name of the element',
-        default: this.appname + (this.appname.includes('-') ? '' : '-element'),
+        default: defaultElementName,
         validate(elementName) {
-          let elementNameContainsHyphen = elementName.includes('-');
+          const elementNameContainsHyphen = elementName.includes('-');
           if (!elementNameContainsHyphen) {
             that.log('\nCustom elements must include a hyphen in their name. Please, try again.');
           }
 
           return elementNameContainsHyphen;
         }
+      },
+      {
+        name: 'elementClassName',
+        type: 'input',
+        message: 'Name of the element class',
+        default: generateDefaultElementClassName(defaultElementName)
       },
       {
         name: 'elementDescription',
